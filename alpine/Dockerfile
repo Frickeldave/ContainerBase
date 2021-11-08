@@ -5,11 +5,12 @@ LABEL 		IMAGE_VERSION=3.14.2
 LABEL 		IMAGE_RELEASE=20211105
 
 # add local user "appuser" which is used to run the application
-RUN 		adduser -D -h "/home/appuser" -u 50000 -g 50000 -s /bin/sh appuser; \
-				mkdir /home/appuser/data; \
+RUN 		adduser -D -h "/home/appuser" -u 50000 -g 50000 -s /bin/sh appuser
+
+RUN			mkdir /home/appuser/data; \
 				mkdir /home/appuser/data/certificates; \
 				mkdir /home/appuser/app; \
-				mkdir /home/appuser/app/tools;
+				mkdir /home/appuser/app/tools
 
 RUN			chown -R appuser:appuser /home/appuser/data; \
 				chown -R appuser:appuser /home/appuser/data/certificates; \
