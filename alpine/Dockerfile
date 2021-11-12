@@ -1,8 +1,12 @@
 FROM	    docker.io/library/alpine:latest
 
-LABEL 		MAINTAINER="David Koenig <dave@frickeldave.bavarian>"
-LABEL 		IMAGE_VERSION=3.14.2
-LABEL 		IMAGE_RELEASE=20211105
+LABEL		org.opencontainers.image.authors="David Koenig <dave@frickeldave.de>"
+LABEL		org.opencontainers.image.created="2021-11-12"
+LABEL		org.opencontainers.image.version="3.14.2"
+LABEL		org.opencontainers.image.url="https://github.com/Frickeldave/ContainerBase/blob/main/alpine"
+LABEL		org.opencontainers.image.documentation="https://github.com/Frickeldave/ContainerBase/blob/main/alpine/README.md"
+LABEL		org.opencontainers.image.source="https://github.com/Frickeldave/ContainerBase/blob/main/alpine"
+LABEL 		org.opencontainers.image.description "This is the base base image for the docker infrastructure of the Frickeldave environment."
 
 # add local user "appuser" which is used to run the application
 RUN 		adduser -D -h "/home/appuser" -u 50000 -g 50000 -s /bin/sh appuser
