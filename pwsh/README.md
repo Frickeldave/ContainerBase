@@ -1,10 +1,10 @@
-# Alpine container image (fd_alpine) for the frickeldave infrastructure
+# Powershell container image (fd_pwsh) for the frickeldave infrastructure
 
 This describes the base images fro the whole frickeldave infrastructure. 
 
 ## Source for this image
 
-The image is based on the official alpine image, stored on [docker hub](https://hub.docker.com/_/alpine). 
+The image is based on the official alpine image, stored on [docker hub](https://hub.docker.com/_/alpine) and is extended with powershell.
 
 ## Quick reference
 
@@ -15,11 +15,11 @@ The image is based on the official alpine image, stored on [docker hub](https://
 
 - Pull from commandline
 
-  ``` docker pull ghcr.io/frickeldave/fd_alpine:<tag> ```
+  ``` docker pull ghcr.io/frickeldave/fd_pwsh:<tag> ```
 
 - Add to your image
 
-  ``` FROM ghcr.io/frickeldave/fd_alpine:<tag> ```
+  ``` FROM ghcr.io/frickeldave/fd_pwsh:<tag> ```
 
 ## License
 
