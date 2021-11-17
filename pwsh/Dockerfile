@@ -3,9 +3,9 @@ FROM        ghcr.io/frickeldave/fd_alpine:3.14.2
 LABEL		org.opencontainers.image.authors="David Koenig <dave@frickeldave.de>"
 LABEL		org.opencontainers.image.created="2021-11-12"
 LABEL		org.opencontainers.image.version="7.1.3"
-LABEL		org.opencontainers.image.url="https://github.com/Frickeldave/ContainerBase/blob/main/pwsh"
-LABEL		org.opencontainers.image.documentation="https://github.com/Frickeldave/ContainerBase/blob/main/pwsh/README.md"
-LABEL		org.opencontainers.image.source="https://github.com/Frickeldave/ContainerBase/blob/main/pwsh"
+LABEL		org.opencontainers.image.url="https://github.com/Frickeldave/ContainerBase/pwsh"
+LABEL		org.opencontainers.image.documentation="https://github.com/Frickeldave/ContainerBase/pwsh/README.md"
+LABEL		org.opencontainers.image.source="https://github.com/Frickeldave/ContainerBase/pwsh"
 LABEL 		org.opencontainers.image.description "This is the powershell base image for the docker infrastructure of the Frickeldave environment."
 
 RUN         apk add --no-cache \

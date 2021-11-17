@@ -3,9 +3,9 @@ FROM	    docker.io/library/alpine:3.14.2
 LABEL		org.opencontainers.image.authors="David Koenig <dave@frickeldave.de>"
 LABEL		org.opencontainers.image.created="2021-11-12"
 LABEL		org.opencontainers.image.version="3.14.2"
-LABEL		org.opencontainers.image.url="https://github.com/Frickeldave/ContainerBase/blob/main/alpine"
-LABEL		org.opencontainers.image.documentation="https://github.com/Frickeldave/ContainerBase/blob/main/alpine/README.md"
-LABEL		org.opencontainers.image.source="https://github.com/Frickeldave/ContainerBase/blob/main/alpine"
+LABEL		org.opencontainers.image.url="https://github.com/Frickeldave/ContainerBase/alpine"
+LABEL		org.opencontainers.image.documentation="https://github.com/Frickeldave/ContainerBase/alpine/README.md"
+LABEL		org.opencontainers.image.source="https://github.com/Frickeldave/ContainerBase/alpine"
 LABEL 		org.opencontainers.image.description "This is the base image for the docker infrastructure of the Frickeldave environment."
 
 # add local user "appuser" which is used to run the application
