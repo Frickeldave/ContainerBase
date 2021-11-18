@@ -2,7 +2,7 @@ FROM 		ghcr.io/frickeldave/fd_alpine:3.14.2
 
 LABEL		org.opencontainers.image.authors="David Koenig <dave@frickeldave.de>"
 LABEL		org.opencontainers.image.created="2021-11-18"
-LABEL		org.opencontainers.image.version="10.6.4-r1"
+LABEL		org.opencontainers.image.version="10.5.13-r0"
 LABEL		org.opencontainers.image.url="https://github.com/Frickeldave/ContainerBase/mariadb"
 LABEL		org.opencontainers.image.documentation="https://github.com/Frickeldave/ContainerBase/mariadb/README.md"
 LABEL		org.opencontainers.image.source="https://github.com/Frickeldave/ContainerBase/mariadb"
