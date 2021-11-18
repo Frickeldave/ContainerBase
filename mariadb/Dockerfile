@@ -10,8 +10,8 @@ LABEL 		org.opencontainers.image.description "This is the mariadb base image for
 
 # Additionally openssl is needed which is installed in alpine base.
 RUN 		apk update; \
-				apk add mariadb=10.6.4-r1 \
-					mariadb-client=10.6.4-r1; \
+				apk add mariadb=10.5.13-r0 \
+					mariadb-client=10.5.13-r0; \
 				rm -rf /var/lib/apt/lists/*; \
 				rm -rf /var/cache/apk/*
 
