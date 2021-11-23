@@ -1,0 +1,41 @@
+daemon off;
+worker_processes  1;
+pid        /home/appuser/app/nginx/nginx.pid;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                        '$status $body_bytes_sent "$http_referer" '
+                        '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /dev/stdout  main;
+
+    # Set error log
+    #debug - Debugging messages.
+    #info - Informational messages.
+    #notice - Notices.
+    #warn - Warnings.
+    #error - Errors while processing a request.
+    #crit - Critical issues. Requires a prompt action.
+    #alert - Alerts. Action must be taken immediately.
+    #emerg - Emergency situation. The system is in an unusable state.
+    error_log  /dev/stdout info;
+
+    # fix for very long server names
+    server_names_hash_bucket_size 128;
+
+    sendfile        on;
+    # tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    # gzip  on;
+
+    include /home/appuser/data/nginx/conf.d/*.cnf;
+}

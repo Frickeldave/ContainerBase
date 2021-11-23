@@ -1,0 +1,17 @@
+server {
+    listen #NGX_PORT# ssl;
+    server_name  #NGX_DNSINITDOMAIN#;
+
+    ssl_certificate      /home/appuser/data/nginx/certificates/cer.pem;
+    ssl_certificate_key  /home/appuser/data/nginx/certificates/key.pem;
+
+    access_log  /dev/stdout;
+    error_log   /dev/stdout;
+
+    error_page   500 502 503 504  /50x.html;
+
+    location / {
+        root   /home/appuser/data/nginx/html;
+        index  index.html index.htm;
+    }
+}
