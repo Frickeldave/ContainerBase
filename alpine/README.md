@@ -21,6 +21,10 @@ The image is based on the official alpine image, stored on [docker hub](https://
 
   ``` FROM ghcr.io/frickeldave/fd_alpine:<tag> ```
 
+- How to build by yourself
+
+  ``` docker build -t ghcr.io/frickeldave/fd_alpine --build-arg fd_buildnumber=22 --build-arg fd_builddate=$(date -u +'%Y-%m-%dT%H:%M:%SZ') . ```
+
 ## License
 
 View license information for the software contained in this image.

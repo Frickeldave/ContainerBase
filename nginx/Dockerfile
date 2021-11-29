@@ -1,14 +1,17 @@
-FROM 		ghcr.io/frickeldave/fd_alpine:3.14.3
+FROM 		ghcr.io/frickeldave/fd_alpine:3.15.0
+
+ARG 		NGX_VERSION=1.21.4
 
 LABEL		org.opencontainers.image.authors="David Koenig <dave@frickeldave.de>"
 LABEL		org.opencontainers.image.created="2021-11-23"
-LABEL		org.opencontainers.image.version="1.21.4"
+LABEL		org.opencontainers.image.version="$NGX_VERSION"
 LABEL		org.opencontainers.image.url="https://github.com/Frickeldave/ContainerBase/nginx"
 LABEL		org.opencontainers.image.documentation="https://github.com/Frickeldave/ContainerBase/nginx/README.md"
 LABEL		org.opencontainers.image.source="https://github.com/Frickeldave/ContainerBase/ngix"
 LABEL 		org.opencontainers.image.description "This is the nginx base image for the docker infrastructure of the Frickeldave environment."
 
-ARG 		NGX_VERSION=1.21.4
+LABEL		de.frickeldave.containers.builddate=$fd_builddate
+LABEL		de.frickeldave.containers.builnumber=$fd_buildnumber
 
 # Additionally openssl and curl is needed which is installed in alpine base.
 RUN apk add --no-cache --virtual .build-deps \
