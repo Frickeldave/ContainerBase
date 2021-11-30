@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: ghcr.io/frickeldave/fd_mariadbtest:latest
+    hostname: mariadb
+    restart: "no"
+    ports:
+      - "30110:30110"
+    volumes: # Tip: Disable for frequently recurring tests
+      - mariadb-data:/home/appuser/data
+    networks: 
+      mdbnet:
+        ipv4_address: 172.6.20.110
+    healthcheck:
+      test: "mysqladmin status -h 127.0.0.1 -u healthstatus -phealth2test -P 20110"
+      interval: 5s
+      timeout: 10s
+      retries: 3
+    environment:
+      - MDB_ROOTPWD=root2test
+      - MDB_PORT=20110
+      - MDB_ADMINUSER=adminmdb
+      - MDB_BACKUPUSER=backupmdb
+      - MDB_ADMINPWD=admin2test
+      - MDB_BACKUPPWD=backup2test
+      - MDB_HEALTHUSER=healthstatus
+      - MDB_HEALTHPWD=health2test
+      - MDB_COLLATION=utf8_unicode_ci
+      - MDB_CHARACTERSET=utf8
+      - MDB_APPDB=demodb
+      - MDB_APPDB_USER=admindemodb
+      - MDB_APPDB_PWD=admindemodb2test
+networks:
+  mdbnet:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.6.20.0/24"
+volumes:
+  mariadb-data:

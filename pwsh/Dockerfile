@@ -1,6 +1,8 @@
 FROM        ghcr.io/frickeldave/fd_alpine:3.15.0
 
 ARG 		PSH_VERSION=7.2.0
+ARG 		fd_builddate
+ARG 		fd_buildnumber
 
 LABEL		org.opencontainers.image.authors="David Koenig <dave@frickeldave.de>"
 LABEL		org.opencontainers.image.created="2021-11-29"
@@ -9,9 +11,8 @@ LABEL		org.opencontainers.image.url="https://github.com/Frickeldave/ContainerBas
 LABEL		org.opencontainers.image.documentation="https://github.com/Frickeldave/ContainerBase/pwsh/README.md"
 LABEL		org.opencontainers.image.source="https://github.com/Frickeldave/ContainerBase/pwsh"
 LABEL 		org.opencontainers.image.description "This is the powershell base image for the docker infrastructure of the Frickeldave environment."
-
 LABEL		de.frickeldave.containers.builddate=$fd_builddate
-LABEL		de.frickeldave.containers.builnumber=$fd_buildnumber
+LABEL		de.frickeldave.containers.buildnumber=$fd_buildnumber
 
 RUN         apk add --no-cache \
                 ca-certificates \

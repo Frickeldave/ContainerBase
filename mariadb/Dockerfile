@@ -1,18 +1,19 @@
 FROM 		ghcr.io/frickeldave/fd_alpine:3.15.0
 
-ARG 		MDB_VERSION=10.5.13-r0
-ARG 		MDB_CLIENTVERSION=10.5.13-r0
+ARG 		MDB_VERSION=10.6.4-r1
+ARG 		MDB_CLIENTVERSION=10.6.4-r1
+ARG 		fd_builddate
+ARG 		fd_buildnumber
 
 LABEL		org.opencontainers.image.authors="David Koenig <dave@frickeldave.de>"
-LABEL		org.opencontainers.image.created="2021-11-18"
-LABEL		org.opencontainers.image.version="10.5.13-r0"
+LABEL		org.opencontainers.image.created="2021-11-30"
+LABEL		org.opencontainers.image.version="10.6.4-r1"
 LABEL		org.opencontainers.image.url="https://github.com/Frickeldave/ContainerBase/mariadb"
 LABEL		org.opencontainers.image.documentation="https://github.com/Frickeldave/ContainerBase/mariadb/README.md"
 LABEL		org.opencontainers.image.source="https://github.com/Frickeldave/ContainerBase/mariadb"
 LABEL 		org.opencontainers.image.description "This is the mariadb base image for the docker infrastructure of the Frickeldave environment."
-
 LABEL		de.frickeldave.containers.builddate=$fd_builddate
-LABEL		de.frickeldave.containers.builnumber=$fd_buildnumber
+LABEL		de.frickeldave.containers.buildnumber=$fd_buildnumber
 
 # Additionally openssl is needed which is installed in alpine base.
 RUN 		apk update; \

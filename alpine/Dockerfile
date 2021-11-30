@@ -12,7 +12,7 @@ LABEL		org.opencontainers.image.source="https://github.com/Frickeldave/Container
 LABEL 		org.opencontainers.image.description "This is the base image for the docker infrastructure of the Frickeldave environment."
 
 LABEL		de.frickeldave.containers.builddate=$fd_builddate
-LABEL		de.frickeldave.containers.builnumber=$fd_buildnumber
+LABEL		de.frickeldave.containers.buildnumber=$fd_buildnumber
 
 # add local user "appuser" which is used to run the application
 RUN 		adduser -D -h "/home/appuser" -u 50000 -g 50000 -s /bin/sh appuser

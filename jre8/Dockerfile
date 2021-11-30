@@ -1,6 +1,8 @@
 FROM        ghcr.io/frickeldave/fd_alpine:3.15.0
 
 ARG 		JRE_VERSION=8.302.08-r2
+ARG 		fd_builddate
+ARG 		fd_buildnumber
 
 LABEL		org.opencontainers.image.authors="David Koenig <dave@frickeldave.de>"
 LABEL		org.opencontainers.image.created="2021-11-12"
@@ -9,6 +11,8 @@ LABEL		org.opencontainers.image.url="https://github.com/Frickeldave/ContainerBas
 LABEL		org.opencontainers.image.documentation="https://github.com/Frickeldave/ContainerBase/jre8/README.md"
 LABEL		org.opencontainers.image.source="https://github.com/Frickeldave/ContainerBase/jre8"
 LABEL 		org.opencontainers.image.description "This is the java 8 base image for the docker infrastructure of the Frickeldave environment."
+LABEL		de.frickeldave.containers.builddate=$fd_builddate
+LABEL		de.frickeldave.containers.buildnumber=$fd_buildnumber
 
 # Install java
 RUN         apk update; \

@@ -48,28 +48,30 @@ then
 	sleep 5s
 
 	echo "patch setup.sql based on given environment variables"
-	sed -i -e "s/#MDB_ROOTPWD#/${MDB_ROOTPWD}/g" /home/appuser/app/setup.sql
-	sed -i -e "s/#MDB_ADMINUSER#/${MDB_ADMINUSER}/g" /home/appuser/app/setup.sql
-	sed -i -e "s/#MDB_BACKUPUSER#/${MDB_BACKUPUSER}/g" /home/appuser/app/setup.sql
-	sed -i -e "s/#MDB_ADMINPWD#/${MDB_ADMINPWD}/g" /home/appuser/app/setup.sql
-	sed -i -e "s/#MDB_BACKUPPWD#/${MDB_BACKUPPWD}/g" /home/appuser/app/setup.sql
-	sed -i -e "s/#MDB_HEALTHUSER#/${MDB_HEALTHUSER}/g" /home/appuser/app/setup.sql
-	sed -i -e "s/#MDB_HEALTHPWD#/${MDB_HEALTHPWD}/g" /home/appuser/app/setup.sql
+	cp /home/appuser/app/setup.sql /home/appuser/data/setup.sql
+	sed -i -e "s/#MDB_ROOTPWD#/${MDB_ROOTPWD}/g" /home/appuser/data/setup.sql
+	sed -i -e "s/#MDB_ADMINUSER#/${MDB_ADMINUSER}/g" /home/appuser/data/setup.sql
+	sed -i -e "s/#MDB_BACKUPUSER#/${MDB_BACKUPUSER}/g" /home/appuser/data/setup.sql
+	sed -i -e "s/#MDB_ADMINPWD#/${MDB_ADMINPWD}/g" /home/appuser/data/setup.sql
+	sed -i -e "s/#MDB_BACKUPPWD#/${MDB_BACKUPPWD}/g" /home/appuser/data/setup.sql
+	sed -i -e "s/#MDB_HEALTHUSER#/${MDB_HEALTHUSER}/g" /home/appuser/data/setup.sql
+	sed -i -e "s/#MDB_HEALTHPWD#/${MDB_HEALTHPWD}/g" /home/appuser/data/setup.sql
 
 	echo "inject changes"
-	mysql -v -h 127.0.0.1 -u root -P ${MDB_PORT} < /home/appuser/app/setup.sql
-	rm -f /home/appuser/app/setup.sql
+	mysql -v -h 127.0.0.1 -u root -P ${MDB_PORT} < /home/appuser/data/setup.sql
+	rm -f /home/appuser/data/setup.sql
 
 	echo "patch appdb.sql based on given environment variables"
-	sed -i -e "s/#MDB_APPDB#/${MDB_APPDB}/g" /home/appuser/app/appdb.sql
-	sed -i -e "s/#MDB_CHARACTERSET#/${MDB_CHARACTERSET}/g" /home/appuser/app/appdb.sql
-	sed -i -e "s/#MDB_COLLATION#/${MDB_COLLATION}/g" /home/appuser/app/appdb.sql
-	sed -i -e "s/#MDB_APPDB_USER#/${MDB_APPDB_USER}/g" /home/appuser/app/appdb.sql
-	sed -i -e "s/#MDB_APPDB_PWD#/${MDB_APPDB_PWD}/g" /home/appuser/app/appdb.sql
+	cp /home/appuser/app/appdb.sql /home/appuser/data/appdb.sql
+	sed -i -e "s/#MDB_APPDB#/${MDB_APPDB}/g" /home/appuser/data/appdb.sql
+	sed -i -e "s/#MDB_CHARACTERSET#/${MDB_CHARACTERSET}/g" /home/appuser/data/appdb.sql
+	sed -i -e "s/#MDB_COLLATION#/${MDB_COLLATION}/g" /home/appuser/data/appdb.sql
+	sed -i -e "s/#MDB_APPDB_USER#/${MDB_APPDB_USER}/g" /home/appuser/data/appdb.sql
+	sed -i -e "s/#MDB_APPDB_PWD#/${MDB_APPDB_PWD}/g" /home/appuser/data/appdb.sql
 
 	echo "inject changes"
-	mysql -v -h 127.0.0.1 -u root -P ${MDB_PORT} -p${MDB_ROOTPWD} < /home/appuser/app/appdb.sql
-	rm -f /home/appuser/app/appdb.sql
+	mysql -v -h 127.0.0.1 -u root -P ${MDB_PORT} -p${MDB_ROOTPWD} < /home/appuser/data/appdb.sql
+	rm -f /home/appuser/data/appdb.sql
 
 	echo "let us wait a few seconds more to be sure that everything is applied"
 	sleep 5s
