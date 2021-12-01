@@ -1,10 +1,12 @@
 # Powershell container image (fd_pwsh) for the frickeldave infrastructure
 
-This describes the base images fro the whole frickeldave infrastructure. 
+This describes the base images for all powershell based containers for the whole frickeldave infrastructure. 
+
+Go [back](./../README.md) to the root of the documentation. 
 
 ## Source for this image
 
-The image is based on the official alpine image, stored on [docker hub](https://hub.docker.com/_/alpine) and is extended with powershell.
+The image is based on the frickeldave alpine image [alpine image](./../alpine/README.md).
 
 ## Quick reference
 
@@ -20,6 +22,10 @@ The image is based on the official alpine image, stored on [docker hub](https://
 - Add to your image
 
   ``` FROM ghcr.io/frickeldave/fd_pwsh:<tag> ```
+
+- How to build by yourself
+
+  ``` docker build -t ghcr.io/frickeldave/fd_pwsh --build-arg fd_buildnumber=<int> --build-arg fd_builddate=$(date -u +'%Y-%m-%dT%H:%M:%SZ') . ```
 
 ## License
 

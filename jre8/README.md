@@ -1,6 +1,6 @@
-# Alpine container image (fd_alpine) for the frickeldave infrastructure
+# Java container image (fd_alpine) for the frickeldave infrastructure
 
-This describes the base images for the whole frickeldave infrastructure. 
+This describes the base images fro the whole frickeldave infrastructure. 
 
 Go [back](./../README.md) to the root of the documentation. 
 
@@ -17,15 +17,15 @@ The image is based on the official alpine image, stored on [docker hub](https://
 
 - Pull from commandline
 
-  ``` docker pull ghcr.io/frickeldave/fd_alpine:<tag> ```
+  ``` docker pull ghcr.io/frickeldave/fd_jre8:<tag> ```
 
 - Add to your image
 
-  ``` FROM ghcr.io/frickeldave/fd_alpine:<tag> ```
+  ``` FROM ghcr.io/frickeldave/fd_jre8:<tag> ```
 
 - How to build by yourself
 
-  ``` docker build -t ghcr.io/frickeldave/fd_alpine --build-arg fd_buildnumber=<int> --build-arg fd_builddate=$(date -u +'%Y-%m-%dT%H:%M:%SZ') . ```
+  ``` docker build -t ghcr.io/frickeldave/fd_jre8 --build-arg fd_buildnumber=<int> --build-arg fd_builddate=$(date -u +'%Y-%m-%dT%H:%M:%SZ') . ```
 
 ## License
 
