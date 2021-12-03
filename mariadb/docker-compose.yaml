@@ -6,7 +6,7 @@ services:
     hostname: mariadb
     restart: "no"
     ports:
-      - "30110:30110"
+      - "20110:20110"
     volumes: # Tip: Disable for frequently recurring tests
       - mariadb-data:/home/appuser/data
     networks: 
